@@ -1,0 +1,1232 @@
+<!doctype html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	 <meta name="jiankong" content="TMS异常监控大屏">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link href="./assets/css/datepicker3.css" rel="stylesheet">
+	 <link href="./assets/css/jiankong.css" rel="stylesheet" type="text/css">
+	 <title>TMS异常监控大屏</title>
+</head>
+<body onload="getTime()">
+	<!-- 顶部开始 -->
+	<div class="top">
+		<div class="inner-top">
+			<img src="./assets/img/虎.png">
+			<div class="title-information">
+				<div class="title">TMS异常监控大屏</div>
+				<div id="information"></div>
+			</div>
+			<div class="storehouse-time">
+				<div class="storehouse">仓 库：</div>
+				<div class="select-group">
+					<button type="button" class="btn btn-black dropdown-toggle select-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">上海保养仓1</button>
+					<ul class="dropdown-menu">
+						<li>上海保养仓1</li>
+						<li>上海保养仓2</li>
+						<li>上海保养仓3</li>
+					</ul>
+				</div>
+				<!--<select>
+					<option value="上海保养仓">上海保养仓1</option>
+					<option value="上海保养仓">上海保养仓2</option>
+					<option value="上海保养仓">上海保养仓3</option>
+					<option value="上海保养仓">上海保养仓4</option>
+				</select>-->
+				<div class="time">时 间：</div>
+				<div class="input-daterange input-group" id="datepicker">
+					<input type="text" class="input-sm form-control" name="start" value="08/09/2017" style="border-radius: 3px 0 0 3px;"/>
+					<span class="input-group-addon">至</span>
+					<input type="text" class="input-sm form-control" name="end" value="08/09/2017" style="border-radius: 0 3px 3px 0;"/>
+				</div>
+				<button class="search">查 询</button>
+			</div>
+		</div>
+	</div>
+	<!-- 顶部结束 -->
+	<!-- 菜单开始 -->
+	<div class="slider">
+		<div class="inner-slider">
+			<img class= "prev" src="./assets/img/向左.png">
+			<div class="container">
+				<div id="typeWrap" class="left" style="left: 0">
+					<button class="type on" type="button" name="buttonLink">拣货异常监控</button>
+					<button class="type" type="button" name="buttonLink">门店快递退回订单异常</button>
+					<button class="type" type="button" name="buttonLink">采购提货异常</button>
+					<button class="type" type="button" name="buttonLink">自配订单异常</button>
+					<button class="type" type="button" name="buttonLink">订单拦截大屏</button>
+					<button class="type" type="button" name="buttonLink">调拨健康</button>  
+					<button class="type" type="button" name="buttonLink">内容内容内容</button>
+					<button class="type" type="button" name="buttonLink">门店快递退回订单异常</button>
+					<button class="type" type="button" name="buttonLink">采购提货异常</button>
+					<button class="type" type="button" name="buttonLink">自配订单异常</button>
+					<button class="type" type="button" name="buttonLink">订单拦截大屏</button>
+					<button class="type" type="button" name="buttonLink">调拨健康</button>   
+					<!-- 若添加button数量则注意修改切换的js代码 -->
+				</div>
+		  </div>
+			<img class= "next" src="./assets/img/向右.png">
+		</div>
+	</div>
+	<!-- 菜单结束 -->
+	<div class="big">
+		<div class="inner-big">
+			<div class="icon">
+					<img id="play" src="./assets/img/暂停.png" alt="播放" style="display: none;">
+					<img id="stop" src="./assets/img/播放.png" alt="暂停" >
+			</div>
+			<div id="currentText" class="text">拣货异常监控</div>
+			<a class="daochu" href="">导出</a>
+		</div>
+	</div>
+	<div class="situation">
+		<div class="inner-situation">
+		    <div class="situation-text">总体情况</div>
+		    <div class="yanchi">出库延迟<div class="number">0</div></div>
+		    <div class="yanchi">配送延迟<div class="number">51</div></div>
+	    </div>
+	</div>
+	<!-- 表格开始 -->
+	<div id="tables" class="tabel-wrap">
+		<div class="table-item" style="display: block;">
+				<table class="table">
+					<tr class="little" style="background-color: #333333;">
+						<th>仓库名称</th>
+						<th>线路</th>
+						<th>出库延迟</th>
+						<th>配送延迟</th>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+				</table>
+		</div>
+		<div class="table-item" style="display: none;">
+				<table class="table">
+					<tr class="little" style="background-color: #333333;">
+						<th>仓库名称</th>
+						<th>线路</th>
+						<th>出库延迟</th>
+						<th>配送延迟</th>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>
+					<tr>
+						<td>上海保养仓</td>
+						<td>上海A线</td>
+						<td>0</td>
+						<td><a href="">7</a></td>
+					</tr>	
+				</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>	
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+		<div class="table-item" style="display: none;">
+			<table class="table">
+				<tr class="little" style="background-color: #333333;">
+					<th>仓库名称</th>
+					<th>线路</th>
+					<th>出库延迟</th>
+					<th>配送延迟</th>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>
+				<tr>
+					<td>上海保养仓</td>
+					<td>上海A线</td>
+					<td>0</td>
+					<td><a href="">7</a></td>
+				</tr>		
+			</table>
+		</div>
+	</div>
+	<script src="./assets/js/jquery-2.1.1.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+    //日期选择
+    	$(function() {
+    		$('.input-daterange').datepicker({
+    				language: "zh-CN",
+            autoclose: true,//选中之后自动隐藏日期选择框
+            todayBtn: "linked",//今日按钮
+            clearBtn: true,//清除按钮
+						keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true
+    		});
+    	});
+
+        
+		// $(".type").click(function () {
+		// 	$(this).addClass("on").siblings("button").removeClass("on");
+		// 	var text = $(this).text();
+		// 	$(".text").text(text);
+		// })
+
+		/*
+        // button切换
+ 		function cut(buttonNumber) {
+ 			var buttonLinkArr = document.getElementsByName("buttonLink");
+ 			for(var i = 0;i<buttonLinkArr.length; i++) {
+ 				if(i == buttonNumber) {
+ 					buttonLinkArr[i].classList.add("on");
+ 					var onText = document.getElementsByClassName("on")[0].innerText;
+ 					document.getElementsByClassName("text")[0].innerHTML = onText;
+
+ 				} else {
+ 					buttonLinkArr[i].classList.remove("on");
+ 				}
+ 			}
+ 		}
+        var i = 0;
+        function autoCut() {
+        	if(i>11) {     //此处数值根据按钮的数量确定
+        		i=0;
+        	}
+        	cut(i);
+        	i++;
+        }
+        var timer = setInterval("autoCut()",2000);
+		var width = document.getElementsByClassName("left")[0].offsetWidth;
+		var left = document.getElementsByClassName("left")[0].style.left;
+		console.log(width)
+		$(".prev").click(function() {
+			var newleft = width-1200+'px';
+ 			$(".left").css("left","-1200px");
+		})
+
+		$(".next").click(function() {
+			var newleft = width-2400+'px';
+			console.log(newleft)
+ 			$(".left").css("left","newleft");
+			//  $(".left").css({'transform': 'translate3d(-1200px, 0px, 0px)', 'transition-duration': '300ms'})
+		})
+        var t = 0;
+  		$(".inner-big img").click(function() {
+  			if(t == 0) {
+  			$(this).attr('src','./assets/img/暂停.png');
+  			clearInterval(timer);
+  			t = 1;
+  			}
+  			else if(t == 1) {
+  			$(this).attr('src','./assets/img/播放.png');
+  			timer = setInterval("autoCut()",2000);
+  			t = 0;
+  			}
+  		})
+			*/
+
+			var timer = null,	// 自动播放定时器
+					pageIndex = 0,	// 当前页面的索引
+					typeIndex = 0,	// 当前类型的索引
+					perPageWidth = 1200,	// 每屏页面的宽度
+					speed = 30000,	// 自动播放的速度
+					isPlay = true;	// 是否播放
+			var $typeWrap = $('#typeWrap'),
+					types = $typeWrap.find('.type'),
+					typesLen = types.length, // 类型的长度
+					pageObj = computePageObj(typesLen),
+					pages = Math.ceil(pageObj.length/perPageWidth), // 总页面数
+					pageArr = pageObj.pageArr;	// 每屏页面的最后一个类型的索引数组
+
+			// 前一个
+			$(".prev").click(function() {
+				if (pageIndex > 0) {
+					pageIndex--
+					$(".left").css({'transform': 'translate3d(' + (-Math.round(pageIndex*perPageWidth))  + 'px, 0px, 0px)', 'transition-duration': '300ms'})
+				}
+			});
+
+			// 后一个
+			$(".next").click(function() {
+				if (pageIndex < pages - 1) {
+					pageIndex++
+					$(".left").css({'transform': 'translate3d(' + (-Math.round(pageIndex*perPageWidth))  + 'px, 0px, 0px)', 'transition-duration': '300ms'})
+				}
+			});
+
+			// 点击类型切换
+			$('#typeWrap').on('click', '.type', function() {
+				var $this = $(this),
+						index = $this.index();
+				clearInterval(timer)
+				typeIndex = index
+				setCurrentType()
+				if (isPlay) {
+					autoPlay()
+				}
+			});
+
+			// 选择仓库
+			$('.select-group').on('click', 'li', function() {
+				var $this = $(this),
+						value = $this.html();
+					$this.parent().prev().html(value)
+			})
+
+			// 点击播放
+			$("#play").on('click', function() {
+				$(this).hide().next().show();
+				autoPlay()
+			});
+
+			// 点击暂停
+			$("#stop").on('click', function() {
+				$(this).hide().prev().show();
+				stop()
+			});
+
+			function computePageObj(typesLen) {
+				var obj ={};
+				var len = 0;
+				var pageLastArr = [];
+				for (var i = 0; i < typesLen; i++) {
+					len += (Number($(types[i]).width()) + 98);
+					if (len > perPageWidth*(pageLastArr.length + 1)) {
+						pageLastArr.push(i-1)
+					}
+					if (i === typesLen - 1) {
+						pageLastArr.push(i)
+					}
+				}
+				obj.length = len
+				obj.pageArr = pageLastArr
+				return obj
+			}
+
+			autoPlay()
+			function autoPlay () {
+				// clearInterval(timer)
+				isPlay = true
+				timer = setInterval(function () {
+					// 自动切屏
+					for (var i = 0; i < pageArr.length; i++) {
+						// console.log(typeIndex)
+						// console.log(typeIndex === pageArr[i] - 0)
+						if (typeIndex === pageArr[i] - 0) {
+							if (i < pages - 1) {
+								pageIndex = i+1
+								$(".left").css({'transform': 'translate3d(' + (-Math.round(pageIndex*perPageWidth))  + 'px, 0px, 0px)', 'transition-duration': '300ms'})
+							} else if (i === pages - 1) {
+									pageIndex = 0
+									$(".left").css({'transform': 'translate3d(0px, 0px, 0px)', 'transition-duration': '300ms'})
+							}
+						}
+					}
+					typeIndex++
+					if (typeIndex === typesLen) {
+						typeIndex = 0
+					}
+					setCurrentType()
+				}, speed)
+			}
+
+			function stop () {
+				isPlay = false
+				clearInterval(timer)
+			}
+
+			// 每屏切换
+			function setCurrentType () {
+				var currentText = $(types[typeIndex]).html();
+				types.removeClass('on').eq(typeIndex).addClass('on');
+				$('#currentText').html(currentText);
+				$('#tables .table-item').hide().eq(typeIndex).show()
+			}
+
+    </script>
+    <script type="text/javascript">
+    	//顶部获取时间信息
+	function getTime() {
+
+    var dateObj = new Date();
+
+    var year = dateObj.getFullYear();//年
+    var month = dateObj.getMonth()+1;//月  (注意：月份+1)
+    var date = dateObj.getDate();//日
+    var day = dateObj.getDay();
+    var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+    var week = weeks[day];//根据day值，获取星期数组中的星期数。
+    var hours = dateObj.getHours();//小时
+    var minutes = dateObj.getMinutes();//分钟
+    var seconds = dateObj.getSeconds();//秒
+
+    if(month<10){
+        month = "0"+month;
+    }
+    if(date<10){
+        date = "0"+date;
+    }
+    if(hours<10){
+        hours = "0"+hours;
+    }
+    if(minutes<10){
+        minutes = "0"+minutes;
+    }
+    if(seconds<10){
+        seconds = "0"+seconds;
+    }
+
+    var newDate = month+"/"+date+" "+week+" "+hours+":"+minutes+":"+seconds;
+    document.getElementById("information").innerHTML = newDate;//在div中写入时间
+    setTimeout('getTime()', 500);//每隔500ms执行一次getTime()
+}
+</script>
+</body>
+</html>
